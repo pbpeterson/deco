@@ -1,5 +1,5 @@
 {
-  "name": "@deco/deco",
+  "name": "@pbpeterson/deco",
   "version": "1.127.2",
   "lock": false,
   "exports": {
@@ -49,10 +49,7 @@
   },
   "fmt": {
     "files": {
-      "exclude": [
-        "static/",
-        "README.md"
-      ]
+      "exclude": ["static/", "README.md"]
     }
   },
   "scopes": {
