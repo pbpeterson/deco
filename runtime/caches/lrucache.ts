@@ -11,13 +11,13 @@ const CACHE_MAX_SIZE = parseInt(
   Deno.env.get("CACHE_MAX_SIZE") ?? Deno.env.get("MAX_CACHE_SIZE") ??
     "1073741824",
 ); // 1 GB max size of cache
-const CACHE_TTL_AUTOPURGE = Deno.env.get("CACHE_TTL_AUTOPURGE") !== "false"; // automatically delete expired items
-const CACHE_ALLOW_STALE = Deno.env.get("CACHE_ALLOW_STALE") !== "false"; // automatically allow stale
+const CACHE_TTL_AUTOPURGE = true; // automatically delete expired items
+const CACHE_ALLOW_STALE = false; // automatically allow stale
 const CACHE_TTL_RESOLUTION = parseInt(
-  Deno.env.get("CACHE_TTL_RESOLUTION") ?? "30000",
+  "60000",
 ); // check for expired items every 30 seconds
 // Time-to-live in milliseconds for cached items. If not set, uses the expiration timestamp from response headers
-const LRU_CACHE_TTL = parseInt(Deno.env.get("LRU_CACHE_TTL") ?? "");
+const LRU_CACHE_TTL = parseInt("3600000");
 
 const cacheOptions = (cache: Cache) => (
   {
